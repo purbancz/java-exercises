@@ -15,6 +15,6 @@ package pl.edu.agh.java;
  */
 public class ArraySpan {
 	public int maxSpan(int[] array) {
-		return 0;
+		throw new UnsupportedOperationException();
 	}
 }
