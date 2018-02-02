@@ -1,7 +1,4 @@
-package pl.edu.agh.java;
-
-import java.util.Arrays;
-import java.util.Collection;
+package pl.edu.agh.java.exercises.arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,9 +6,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 @RunWith(Parameterized.class)
 public class ArraySquareUpTest {
-    private ArraySquareUp arraySquareUp;
+    private ArraySquareUp subject;
     private int[] expectedArray;
     private int n;
 
@@ -30,11 +30,11 @@ public class ArraySquareUpTest {
     public ArraySquareUpTest(int n, int[] expectedArray) {
         this.n = n;
         this.expectedArray = expectedArray;
-        this.arraySquareUp = new ArraySquareUp();
+        this.subject = new ArraySquareUp();
     }
 
     @Test
     public void testSquareUp() {
-        Assert.assertEquals("Invalid span for: " + this.n, this.expectedArray, this.arraySquareUp.squareUp(this.n));
+        Assert.assertEquals("Invalid result for: " + n, expectedArray, subject.squareUp(n));
     }
 }

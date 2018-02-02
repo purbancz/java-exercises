@@ -1,4 +1,4 @@
-package pl.edu.agh.java;
+package pl.edu.agh.java.exercises.arrays;
 
 /**
  * Consider the leftmost and righmost appearances of some value in an array.

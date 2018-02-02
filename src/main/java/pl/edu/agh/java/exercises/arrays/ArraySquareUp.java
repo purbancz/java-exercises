@@ -1,4 +1,4 @@
-package pl.edu.agh.java;
+package pl.edu.agh.java.exercises.arrays;
 
 /**
  * Given n>=0, create an array length n*n with the following pattern, shown here

@@ -1,7 +1,4 @@
-package pl.edu.agh.java;
-
-import java.util.Arrays;
-import java.util.Collection;
+package pl.edu.agh.java.exercises.arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,9 +6,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 @RunWith(Parameterized.class)
 public class ArrayBalanceTest {
-    private ArrayBalance arrayBalance;
+    private ArrayBalance subject;
     private int[] array;
     private boolean expectedCanBalance;
 
@@ -34,12 +34,11 @@ public class ArrayBalanceTest {
     public ArrayBalanceTest(int[] array, boolean expectedCanBalance) {
         this.array = array;
         this.expectedCanBalance = expectedCanBalance;
-        this.arrayBalance = new ArrayBalance();
+        this.subject = new ArrayBalance();
     }
 
     @Test
     public void testCanBalance() {
-        Assert.assertEquals("Invalid span for: " + Arrays.toString(this.array), this.expectedCanBalance,
-                this.arrayBalance.canBalance(this.array));
+        Assert.assertEquals("Invalid result for: " + Arrays.toString(array), expectedCanBalance, subject.canBalance(array));
     }
 }

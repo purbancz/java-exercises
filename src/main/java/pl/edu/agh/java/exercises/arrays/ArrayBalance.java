@@ -1,4 +1,4 @@
-package pl.edu.agh.java;
+package pl.edu.agh.java.exercises.arrays;
 
 /**
  * Given an array, return true if there is a place to split the array so that

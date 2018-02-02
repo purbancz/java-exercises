@@ -1,7 +1,4 @@
-package pl.edu.agh.java;
-
-import java.util.Arrays;
-import java.util.Collection;
+package pl.edu.agh.java.exercises.arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,9 +6,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 @RunWith(Parameterized.class)
 public class ArraySpanTest {
-    private ArraySpan arraySpan;
+    private ArraySpan subject;
     private int[] array;
     private int expectedMaxSpan;
 
@@ -29,12 +29,11 @@ public class ArraySpanTest {
     public ArraySpanTest(int[] array, int expectedMaxSpan) {
         this.array = array;
         this.expectedMaxSpan = expectedMaxSpan;
-        this.arraySpan = new ArraySpan();
+        this.subject = new ArraySpan();
     }
 
     @Test
     public void testMaxSpan() {
-        Assert.assertEquals("Invalid span for: " + Arrays.toString(this.array), this.expectedMaxSpan,
-                this.arraySpan.maxSpan(this.array));
+        Assert.assertEquals("Invalid result for: " + Arrays.toString(array), expectedMaxSpan, subject.maxSpan(array));
     }
 }
