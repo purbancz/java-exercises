@@ -35,6 +35,6 @@ public class ArraySquareUpTest {
 
     @Test
     public void testSquareUp() {
-        Assert.assertEquals("Invalid result for: " + n, expectedArray, subject.squareUp(n));
+        Assert.assertArrayEquals("Invalid result for: " + n, expectedArray, subject.squareUp(n));
     }
 }
