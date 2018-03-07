@@ -26,7 +26,7 @@ public class ArrayBalanceTest {
                 {new int[]{1, 2, 2}, true},
                 {new int[]{1, 2, 3}, false},
                 {new int[]{33, 33, 1, 2, 1}, true},
-                {new int[]{2, 1, 1, 2, 1}, false},
+                {new int[]{2, 1, 1, 2, 1}, true},
                 {new int[]{3, 4, 5, 6}, true},
         });
     }
