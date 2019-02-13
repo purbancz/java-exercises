@@ -1,5 +1,7 @@
 package pl.edu.agh.java.exercises.arrays;
 
+import java.util.Arrays;
+
 /**
  * Given n>=0, create an array length n*n with the following pattern, shown here
  * and in the unit tests: for n=3 : {0, 0, 1, 0, 2, 1, 3, 2, 1}
@@ -12,6 +14,15 @@ package pl.edu.agh.java.exercises.arrays;
  */
 public class ArraySquareUp {
 	public int[] squareUp(int n) {
-		throw new UnsupportedOperationException();
+		int[] arr = new int[n * n];
+		for (int i = 0; i < n*n; i++) {
+			arr[i] = (n*n  % (i+1)) % n+1;
+		}
+		return arr;
+	}
+
+	public static void main(String[] args) {
+		ArraySquareUp array = new ArraySquareUp();
+		System.out.println(Arrays.toString(array.squareUp(5)));
 	}
 }

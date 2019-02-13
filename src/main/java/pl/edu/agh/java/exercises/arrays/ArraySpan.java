@@ -15,6 +15,17 @@ package pl.edu.agh.java.exercises.arrays;
  */
 public class ArraySpan {
 	public int maxSpan(int[] array) {
-		throw new UnsupportedOperationException();
+		int span = 0;
+		int spanTemp = 0;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i; j < array.length; j++)
+				if (array[j] == array[i]) {
+					spanTemp = j-i+1; 
+				}
+			if (spanTemp > span) {
+				span = spanTemp;
+			}
+		}
+		return span;
 	}
 }

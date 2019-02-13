@@ -14,10 +14,7 @@ import java.util.stream.IntStream;
  */
 public class ArrayBalance {
 	public boolean canBalance(int[] array) {
-		throw new UnsupportedOperationException();
-		int sum = IntStream.of(a).sum();
-		if (sum % 2 == 0) {
-			
-		}
+		int sum = IntStream.of(array).sum();
+		return sum % 2 == 0;
 	}
 }
