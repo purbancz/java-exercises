@@ -21,9 +21,8 @@ public class StringSameEnds {
 			}
 		}
 		for (int i = idx; i < string.length(); i++) {
-			if (string.charAt(0 + i - idx) == string.charAt(i)) {
-				same += string.charAt(0 + i);
-			}
+				same += string.charAt(i);
+			
 		}
 		return same;
 	}
