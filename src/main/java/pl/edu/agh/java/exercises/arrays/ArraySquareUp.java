@@ -16,13 +16,18 @@ public class ArraySquareUp {
 	public int[] squareUp(int n) {
 		int[] arr = new int[n * n];
 		for (int i = 0; i < n*n; i++) {
-			arr[i] = (n*n  % (i+1)) % n+1;
+			int rev = n - (i) %  n;
+			if (rev <= i/n+1) {
+				arr[i] = rev;
+			}
+			//n - (i) %  n
+			// i/n+1
 		}
 		return arr;
 	}
 
-	public static void main(String[] args) {
-		ArraySquareUp array = new ArraySquareUp();
-		System.out.println(Arrays.toString(array.squareUp(5)));
-	}
+//	public static void main(String[] args) {
+//		ArraySquareUp array = new ArraySquareUp();
+//		System.out.println(Arrays.toString(array.squareUp(5)));
+//	}
 }
