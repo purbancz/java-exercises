@@ -1,5 +1,6 @@
 package pl.edu.agh.java.exercises.arrays;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
@@ -13,8 +14,37 @@ import java.util.stream.IntStream;
  * @see http://codingbat.com/prob/p158767
  */
 public class ArrayBalance {
+
+	private static boolean balanced;
+
 	public boolean canBalance(int[] array) {
-		int sum = IntStream.of(array).sum();
-		return sum % 2 == 0;
+		balanced = false;
+		return permuteHelper(array, 0);
+	}
+
+	private static boolean permuteHelper(int[] array, int index) {
+
+		if (index >= array.length - 1) {
+			if (IntStream.range(0, array.length / 2).map(i -> array[i]).sum() == IntStream
+					.range(array.length - array.length / 2, array.length).map(i -> array[i]).sum()) {
+				balanced = true;
+			}
+		}
+
+		for (int i = index; i < array.length; i++) {
+
+			int temp = array[index];
+			array[index] = array[i];
+			array[i] = temp;
+
+			permuteHelper(array, index + 1);
+
+			temp = array[index];
+			array[index] = array[i];
+			array[i] = temp;
+
+		}
+
+		return balanced;
 	}
 }
