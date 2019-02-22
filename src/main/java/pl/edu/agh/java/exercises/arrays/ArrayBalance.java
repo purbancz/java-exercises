@@ -17,8 +17,13 @@ public class ArrayBalance {
 	private static boolean balanced;
 
 	public boolean canBalance(int[] array) {
+		int index = array.length / 2 - 1;
+		if (index < 0) {
+			index = 0;
+		}
+
 		balanced = false;
-		return permuter(array, array.length / 2 );
+		return permuter(array, index);
 	}
 
 	private static boolean permuter(int[] array, int index) {
